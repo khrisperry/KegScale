@@ -1,12 +1,19 @@
-esphome:
-  name: $name
-  name_add_mac_suffix: true
-  friendly_name: $name
+# Insert your SSID and Your PWD after inital setup
+wifi:
+# networks:
+#    - ssid: 'REPLACEME'          # Enter your WiFi SSID here. Example: `ssid: 'your_network_name'`
+#      password: 'REPLACEME'      # Enter your wifi password here. Example: `password: 'abcde123456'`
+  ap:
+    ssid: ${name}
 
 captive_portal:
 
 dashboard_import:
-  package_import_url: github://khrisperry/kegscale/kegscale.yaml
+  package_import_url: github://khrisperry/KegScale/kegscale.yaml
+
+substitutions:
+  name: kegscale
+  friendly_name: KegScale
 
 esp8266:
   board: esp01_1m
@@ -14,21 +21,12 @@ esp8266:
 # Enable logging
 logger:
 
-# Enable Home Assistant API
-api:
-  encryption:
-    key: "pY4+7eaejfe7MfoZN37lh+YRbO2fMP9cvG+TO110zMs="
-
-ota:
-  - platform: esphome
-    password: "111cc6c1bd03674e8ad1af2d067290fe"
-
-wifi:
-  ap:
-    ssid: "$name
-
-
-
+esphome:
+  name: $name
+  name_add_mac_suffix: true
+  friendly_name: $friendly_name
+  project: khrisperry.KegScale
+  
 # Webserver
 web_server:
   port: 80
