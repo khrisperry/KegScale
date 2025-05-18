@@ -1,6 +1,6 @@
 # About
 
-Add some information about your project here.
+ESP8266 Keg Scale so you know when you are running out of beer!
 
 # Installation
 
