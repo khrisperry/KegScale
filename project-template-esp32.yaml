@@ -1,14 +1,21 @@
 esphome:
-  name: project-template
-  friendly_name: Project Template
+  name: keg-scale
+  friendly_name: Keg Scale
   # Automatically add the mac address to the name
   # so you can use a single firmware for all devices
   name_add_mac_suffix: true
+  on_boot: 
+    priority: -10
+    then:
+      - logger.set_level: WARN
+      - globals.set:
+          id: debug_logging_enabled
+          value: 'false'
+      - logger.log: "Debug logging disabled on startup"      
 
-esp32:
-  board: esp32dev
-  framework:
-    type: esp-idf
+esp8266:
+  board: esp01_1m
+  restore_from_flash: True
 
 # To be able to get logs from the device via serial and api.
 logger:
