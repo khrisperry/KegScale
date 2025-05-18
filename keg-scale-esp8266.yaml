@@ -135,19 +135,19 @@ sensor:
     name: "Raw Zero Stored"
     lambda: 'return id(raw_zero);'
     update_interval: 10s
-    internal: True
+    internal: false
 
   - platform: template
     name: "Raw Cal 1 Stored"
     lambda: 'return id(raw_cal1);'
     update_interval: 10s
-    internal: true
+    internal: false
 
   - platform: template
     name: "Raw Cal 2 Stored"
     lambda: 'return id(raw_cal2);'
     update_interval: 10s
-    internal: true
+    internal: false
 
 
 # Globals to store raw readings for calibration
