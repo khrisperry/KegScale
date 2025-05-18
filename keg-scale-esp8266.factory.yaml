@@ -1,6 +1,6 @@
 packages:
   # Include all of the core configuration
-  core: !include project-template-esp32.yaml
+  core: !include keg-scale-esp8266.yaml
 
 esphome:
   # This will allow for project identification,
