@@ -34,6 +34,9 @@ wifi:
     ssid: "KegScaleWifi"
     password: "MMMMBeer"
 
+esp32_improv:
+  authorizer: none
+
 # In combination with the `ap` this allows the user
 # to provision wifi credentials to the device.
 captive_portal:
