@@ -12,7 +12,7 @@ esphome:
       - logger.log: "Debug logging disabled on startup"      
 
 esp32:
-  board: node32s
+  board: nodemcu-32s
   framework:
     type: arduino
 
