@@ -1,3 +1,4 @@
+# HX711 Load Cell Sensor
 sensor:
   - platform: hx711
     name: "Raw HX711"
@@ -39,3 +40,43 @@ sensor:
       } else {
         return w1 + m2 * (raw - raw1);
       }
+
+  - platform: template
+    name: "Estimated Keg Weight (lbs)"
+    id: estimated_keg_weight
+    icon: mdi:keg
+    unit_of_measurement: "lbs"
+    update_interval: 10s
+    lambda: |-
+      return((id(calibrated_weight).state - id(keg_tare_weight).state));
+    web_server:
+        sorting_group_id: keg
+        sorting_weight: 11
+  - platform: template
+    name: "Estimate Beers Remaining"
+    icon: mdi:beer
+    update_interval: 10s
+    accuracy_decimals: 0
+    lambda: |-
+      return((id(estimated_keg_weight).state * 16 / id(serving_size).state));
+    web_server:
+        sorting_group_id: keg
+        sorting_weight: 10
+
+  - platform: template
+    name: "Raw Zero Stored"
+    lambda: 'return id(raw_zero);'
+    update_interval: 10s
+    internal: True
+
+  - platform: template
+    name: "Raw Cal 1 Stored"
+    lambda: 'return id(raw_cal1);'
+    update_interval: 10s
+    internal: true
+
+  - platform: template
+    name: "Raw Cal 2 Stored"
+    lambda: 'return id(raw_cal2);'
+    update_interval: 10s
+    internal: true
