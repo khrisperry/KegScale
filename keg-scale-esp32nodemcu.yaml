@@ -1,5 +1,5 @@
 esphome:
-  name: esp32-kegscale
+  name: esp32node-kegscale
   friendly_name: ESP32 KegScale
   name_add_mac_suffix: true
   on_boot: 
