@@ -18,7 +18,7 @@ jobs:
         keg-scale-esp32.factory.yaml
         keg-scale-esp32nodemcu.factory.yaml
       esphome-version: 2025.4.2
-#      combined-name: project-template
+      combined-name: keg-scale
       #### Modify above here to match your project ####
 
       release-summary: ${{ github.event.release.body }}
