@@ -1,0 +1,41 @@
+sensor:
+  - platform: hx711
+    name: "Raw HX711"
+    id: hx711_raw
+    dout_pin: GPIO14
+    clk_pin: GPIO04
+    gain: 128
+    update_interval: 1s
+    web_server:
+        sorting_group_id: raw_scale_data
+        sorting_weight: 2
+
+  - platform: template
+    name: "Calibrated Weight"
+    id: calibrated_weight
+    unit_of_measurement: "lb"
+    accuracy_decimals: 1
+    update_interval: 1s
+    web_server:
+        sorting_group_id: raw_scale_data
+        sorting_weight: 1
+    lambda: |-
+      float raw = id(hx711_raw).state;
+      float raw0 = id(raw_zero);
+      float raw1 = id(raw_cal1);
+      float raw2 = id(raw_cal2);
+      float w1 = id(cal_weight1).state;
+      float w2 = id(cal_weight2).state;
+
+      // Avoid divide-by-zero errors
+      if (raw1 == raw0 || raw2 == raw1) return 0.0;
+
+      float m1 = (w1 - 0.0) / (raw1 - raw0);
+      float m2 = (w2 - w1) / (raw2 - raw1);
+
+      // Piecewise linear interpolation
+      if (raw < raw1) {
+        return m1 * (raw - raw0);
+      } else {
+        return w1 + m2 * (raw - raw1);
+      }
