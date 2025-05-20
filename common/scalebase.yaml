@@ -1,9 +1,10 @@
 esphome:
-  name: keg-scale
-  friendly_name: Keg Scale
-  # Automatically add the mac address to the name
-  # so you can use a single firmware for all devices
+  name: ${name}
+  friendly_name: ${name}
   name_add_mac_suffix: true
+  project:
+    name: ${project_name}
+    version: ${project_version}
   on_boot: 
     priority: -10
     then:
