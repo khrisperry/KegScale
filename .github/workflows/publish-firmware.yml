@@ -15,7 +15,6 @@ jobs:
       #### Modify below here to match your project ####
       files: |
         keg-scale-esp8266.factory.yaml
-        #### keg-scale-esp32.factory.yaml ####
         keg-scale-esp32s3.factory.yaml
         keg-scale-esp32c3.factory.yaml
         keg-scale-esp32nodemcu.factory.yaml
