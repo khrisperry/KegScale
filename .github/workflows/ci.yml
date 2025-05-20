@@ -25,7 +25,7 @@ jobs:
           - keg-scale-esp8266
           - keg-scale-esp32s3
           - keg-scale-esp32c3
-          - keg-scale-esp32nodemcu
+          - keg-scale-esp32
         #### Modify above here to match your project ####
 
         esphome-version:
