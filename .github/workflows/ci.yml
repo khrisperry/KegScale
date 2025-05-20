@@ -24,6 +24,8 @@ jobs:
         file:
           - keg-scale-esp8266
           - keg-scale-esp32
+          - keg-scale-esp32s3
+          - keg-scale-esp32c3
           - keg-scale-esp32nodemcu
         #### Modify above here to match your project ####
 
