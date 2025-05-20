@@ -6,8 +6,8 @@ substitutions:
 
 packages:
   # Include all of the core configuration
-  basescale: !include common/scalebase.yaml
   core: !include keg-scale-esp32s3.yaml
+  basescale: !include common/scalebase.yaml
   gpiosettings: !include common/esp8266gpio.yaml
 
 esphome:
