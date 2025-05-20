@@ -1,3 +1,9 @@
+substitutions:
+  name: "keg-scale"
+  friendly_name: "Keg Scale"
+  project_name: "DAK-Keg Scale"
+  project_version: "1.1.1"
+
 packages:
   # Include all of the core configuration
   core: !include keg-scale-esp32c3.yaml
