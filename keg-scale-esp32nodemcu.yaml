@@ -2,6 +2,3 @@ esp32:
   board: nodemcu-32s
   framework:
     type: arduino
-
-ota:
-  platform: esphome
