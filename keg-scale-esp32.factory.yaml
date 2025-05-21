@@ -32,12 +32,3 @@ esp32_improv:
 # Handy if your device has a usb port for the user to add credentials when they first get it.
 improv_serial:
 
-# To be able to get logs from the device via serial and api.
-logger:
-
-# API is a requirement of the dashboard import.
-api:
-
-ota:
-  platform: esphome
-
